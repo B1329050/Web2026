@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW2：資工選課表</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { padding: 50px; font-family: "Microsoft JhengHei", sans-serif; }
+        .table-container { max-width: 800px; }
+        h2 { font-weight: bold; margin-bottom: 20px; }
+        /* 符合圖片中的綠色標頭樣式 */
+        .table thead { background-color: #00a86b; color: white; }
+        .table th, .table td { vertical-align: middle; }
+        #popoverButton { margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="container table-container">
+        <h2>資工選課表</h2>
+        
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>開課單位</th>
+                    <th>課程名稱</th>
+                    <th>授課教師</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>資工系</td><td>物件導向軟體設計</td><td>李春良</td></tr>
+                <tr><td>資工系</td><td>計算機網路實驗</td><td>李春良</td></tr>
+                <tr><td>資工系</td><td>作業系統實務</td><td>張哲維</td></tr>
+                <tr><td>資工系</td><td>生物統計</td><td>陳光武</td></tr>
+                <tr><td>資工系</td><td>通訊系統</td><td>陳仁暉</td></tr>
+                <tr><td>資工系</td><td>軟硬體專題(2)</td><td>魏志達</td></tr>
+            </tbody>
+        </table>
+
+        <button type="button" class="btn btn-light border" id="popoverButton" 
+                data-bs-toggle="popover" 
+                title="系統訊息" 
+                data-bs-content="選課表內容已成功載入！">
+            Change
+        </button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 初始化 Bootstrap Popover 功能
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+        })
+    </script>
+</body>
+</html>
