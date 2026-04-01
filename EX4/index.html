@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>聖誕樹作業</title>
+</head>
+<body>
+    <h2>請打開 Console</h2>
+    <p>點右鍵選擇檢查切換到 Console (主控台)。</p>
+
+    <script>
+        // 這是你的 JavaScript 程式碼
+        function tree(n) {
+          printTreeTop(n);
+          printTreeBottom(n);
+        }
+
+        function printTreeTop(n) {
+          for (let k = 1; k <= n; k++) {
+            let i = n - k;       
+            let j = 2 * k - 1;   
+            console.log(repeatchar(i, ' ') + repeatchar(j, '*'));
+          }
+        }
+
+        function printTreeBottom(n) {
+          for (let k = 1; k < n; k++) {
+            let i = n - 1;       
+            console.log(repeatchar(i, ' ') + '*');
+          }
+        }
+
+        function repeatchar(n, arg_char) {
+          let result = "";
+          for (let i = 0; i < n; i++) {
+            result += arg_char;
+          }
+          return result;
+        }
+
+        // 執行畫出 4 層的聖誕樹
+        tree(4);
+    </script>
+</body>
+</html>
